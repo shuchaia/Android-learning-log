@@ -4,10 +4,12 @@
 
 
 
-点击下面链接跳转
+点击下面链接可跳转
 
 [Java基础](https://github.com/shuchaia/Android-learning-log/blob/main/Java基础.md)
 
 [Java集合](https://github.com/shuchaia/Android-learning-log/blob/main/Java集合.md)
 
 [安卓八股](https://github.com/shuchaia/Android-learning-log/blob/main/安卓八股.md)
+
+持续更新ing
