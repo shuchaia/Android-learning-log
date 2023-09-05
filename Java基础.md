@@ -1076,7 +1076,7 @@ public class VariableLengthArgument {
 
 ## 面向对象基础
 
-### [#](#面向对象和面向过程的区别) 面向对象和面向过程的区别
+### 面向对象和面向过程的区别
 
 两者的主要区别在于解决问题的方式不同：
 
@@ -1149,14 +1149,14 @@ public class Main {
 
 我们直接定义了圆的半径，并使用该半径直接计算出圆的面积和周长。
 
-### [#](#创建一个对象用什么运算符-对象实体与对象引用有何不同) 创建一个对象用什么运算符?对象实体与对象引用有何不同?
+### 创建一个对象用什么运算符?对象实体与对象引用有何不同?
 
 new 运算符，new 创建对象实例（对象实例在 内存中），对象引用指向对象实例（对象引用存放在栈内存中）。
 
 - 一个对象引用可以指向 0 个或 1 个对象（一根绳子可以不系气球，也可以系一个气球）；
 - 一个对象可以有 n 个引用指向它（可以用 n 条绳子系住一个气球）。
 
-### [#](#对象的相等和引用相等的区别) 对象的相等和引用相等的区别
+### 对象的相等和引用相等的区别
 
 - 对象的相等一般比较的是内存中存放的内容是否相等。
 - 引用相等一般比较的是他们指向的内存地址是否相等。
@@ -1193,7 +1193,7 @@ true
 - `str1` 和 `str2` 不相等，而 `str1` 和 `str3` 相等。这是因为 `==` 运算符比较的是字符串的引用是否相等。
 - `str1`、 `str2`、`str3` 三者的内容都相等。这是因为`equals` 方法比较的是字符串的内容，即使这些字符串的对象引用不同，只要它们的内容相等，就认为它们是相等的。
 
-### [#](#如果一个类没有声明构造方法-该程序能正确执行吗) 如果一个类没有声明构造方法，该程序能正确执行吗?
+### 如果一个类没有声明构造方法，该程序能正确执行吗?
 
 构造方法是一种特殊的方法，主要作用是完成对象的初始化工作。
 
@@ -1201,7 +1201,7 @@ true
 
 我们一直在不知不觉地使用构造方法，这也是为什么我们在创建对象的时候后面要加一个括号（因为要调用无参的构造方法）。如果我们重载了有参的构造方法，记得都要把无参的构造方法也写出来（无论是否用到），因为这可以帮助我们在创建对象的时候少踩坑。
 
-### [#](#构造方法有哪些特点-是否可被-override) 构造方法有哪些特点？是否可被 override?
+### 构造方法有哪些特点？是否可被 override?
 
 构造方法特点如下：
 
@@ -1211,9 +1211,9 @@ true
 
 构造方法不能被 override（重写）,但是可以 overload（重载）,所以你可以看到一个类中有多个构造函数的情况。
 
-### [#](#面向对象三大特征) 面向对象三大特征
+### 面向对象三大特征
 
-#### [#](#封装) 封装
+#### 封装
 
 封装是指把一个对象的状态信息（也就是属性）隐藏在对象内部，不允许外部对象直接访问对象的内部信息。但是可以提供一些可以被外界访问的方法来操作属性。就好像我们看不到挂在墙上的空调的内部的零件信息（也就是属性），但是可以通过遥控器（方法）来控制空调。如果属性不想被外界访问，我们大可不必提供方法给外界访问。但是如果一个类没有提供给外界访问的方法，那么这个类也没有什么意义了。就好像如果没有空调遥控器，那么我们就无法操控空凋制冷，空调本身就没有意义了（当然现在还有很多其他方法 ，这里只是为了举例子）。
 
@@ -1246,7 +1246,7 @@ public class Student {
 }
 ```
 
-#### [#](#继承) 继承
+#### 继承
 
 不同类型的对象，相互之间经常有一定数量的共同点。例如，小明同学、小红同学、小李同学，都共享学生的特性（班级、学号等）。同时，每一个对象还定义了额外的特性使得他们与众不同。例如小明的数学比较好，小红的性格惹人喜爱；小李的力气比较大。继承是使用已存在的类的定义作为基础建立新类的技术，新类的定义可以增加新的数据或新的功能，也可以用父类的功能，但不能选择性地继承父类。通过使用继承，可以快速地创建新的类，可以提高代码的重用，程序的可维护性，节省大量创建新类的时间 ，提高我们的开发效率。
 
@@ -1256,7 +1256,7 @@ public class Student {
 2. 子类可以拥有自己属性和方法，即子类可以对父类进行扩展。
 3. 子类可以用自己的方式实现父类的方法。（以后介绍）。
 
-#### [#](#多态) 多态
+#### 多态
 
 多态，顾名思义，表示一个对象具有多种的状态，具体表现为父类的引用指向子类的实例。
 
@@ -1267,7 +1267,7 @@ public class Student {
 - 多态不能调用“只在子类存在但在父类不存在”的方法；
 - 如果子类重写了父类的方法，真正执行的是子类覆盖的方法，如果子类没有覆盖父类的方法，执行的是父类的方法。
 
-### [#](#接口和抽象类有什么共同点和区别) 接口和抽象类有什么共同点和区别？
+### 接口和抽象类有什么共同点和区别？
 
 **共同点**：
 
@@ -1277,11 +1277,14 @@ public class Student {
 
 **区别**：
 
-- 接口主要用于对类的行为进行约束，你实现了某个接口就具有了对应的行为。抽象类主要用于代码复用，强调的是所属关系。
+- 接口主要用于对类的行为进行约束，你实现了某个接口就具有了对应的行为。抽象类主要用于代码复用，强调的是所属关系，是一种模板设计。
 - 一个类只能继承一个类，但是可以实现多个接口。
 - 接口中的成员变量只能是 `public static final` 类型的，不能被修改且必须有初始值，而抽象类的成员变量默认 default，可在子类中被重新定义，也可被重新赋值。
+- 接口的方法默认是 public，所有方法在接口中不能有实现(Java 8 开始 接口方法可以有默认实现），抽象类可以有非抽象的方法。
 
-### [#](#深拷贝和浅拷贝区别了解吗-什么是引用拷贝) 深拷贝和浅拷贝区别了解吗？什么是引用拷贝？
+
+
+### 深拷贝和浅拷贝区别了解吗？什么是引用拷贝？
 
 关于深拷贝和浅拷贝区别，我这里先给结论：
 
@@ -1290,7 +1293,7 @@ public class Student {
 
 上面的结论没有完全理解的话也没关系，我们来看一个具体的案例！
 
-#### [#](#浅拷贝) 浅拷贝
+#### 浅拷贝
 
 浅拷贝的示例代码如下，我们这里实现了 `Cloneable` 接口，并重写了 `clone()` 方法。
 
@@ -1340,7 +1343,7 @@ System.out.println(person1.getAddress() == person1Copy.getAddress());
 
 从输出结构就可以看出， `person1` 的克隆对象和 `person1` 使用的仍然是同一个 `Address` 对象。
 
-#### [#](#深拷贝) 深拷贝
+#### 深拷贝
 
 这里我们简单对 `Person` 类的 `clone()` 方法进行修改，连带着要把 `Person` 对象内部的 `Address` 对象一起复制。
 
@@ -1376,11 +1379,11 @@ System.out.println(person1.getAddress() == person1Copy.getAddress());
 
 我专门画了一张图来描述浅拷贝、深拷贝、引用拷贝：
 
-![浅拷贝、深拷贝、引用拷贝示意图](https://oss.javaguide.cn/github/javaguide/java/basis/shallow&deep-copy.png)浅拷贝、深拷贝、引用拷贝示意图
+![浅拷贝、深拷贝、引用拷贝示意图](https://oss.javaguide.cn/github/javaguide/java/basis/shallow&deep-copy.png)
 
-## [#](#object) Object
+## Object
 
-### [#](#object-类的常见方法有哪些) Object 类的常见方法有哪些？
+### Object 类的常见方法有哪些？
 
 Object 类是一个特殊的类，是所有类的父类。它主要提供了以下 11 个方法：
 
@@ -1433,7 +1436,7 @@ public final void wait() throws InterruptedException
 protected void finalize() throws Throwable { }
 ```
 
-### [#](#和-equals-的区别) == 和 equals() 的区别
+### == 和 equals() 的区别
 
 **`==`** 对于基本类型和引用类型的作用效果是不同的：
 
@@ -1506,7 +1509,7 @@ public boolean equals(Object anObject) {
 }
 ```
 
-### [#](#hashcode-有什么用) hashCode() 有什么用？
+### hashCode() 有什么用？
 
 `hashCode()` 的作用是获取哈希码（`int` 整数），也称为散列码。这个哈希码的作用是确定该对象在哈希表中的索引位置。
 
@@ -1527,7 +1530,7 @@ public native int hashCode();
 
 散列表存储的是键值对(key-value)，它的特点是：**能根据“键”快速的检索出对应的“值”。这其中就利用到了散列码！（可以快速找到所需要的对象）**
 
-### [#](#为什么要有-hashcode) 为什么要有 hashCode？
+### 为什么要有 hashCode？
 
 我们以“`HashSet` 如何检查重复”为例子来说明为什么要有 `hashCode`？
 
@@ -1559,7 +1562,7 @@ public native int hashCode();
 
 相信大家看了我前面对 `hashCode()` 和 `equals()` 的介绍之后，下面这个问题已经难不倒你们了。
 
-### [#](#为什么重写-equals-时必须重写-hashcode-方法) 为什么重写 equals() 时必须重写 hashCode() 方法？
+### 为什么重写 equals() 时必须重写 hashCode() 方法？
 
 因为两个相等的对象的 `hashCode` 值必须是相等。也就是说如果 `equals` 方法判断两个对象是相等的，那这两个对象的 `hashCode` 值也要相等。
 
@@ -1574,9 +1577,9 @@ public native int hashCode();
 
 更多关于 `hashCode()` 和 `equals()` 的内容可以查看：[Java hashCode() 和 equals()的若干问题解答open in new window](https://www.cnblogs.com/skywang12345/p/3324958.html)
 
-## [#](#string) String
+## String
 
-### [#](#string、stringbuffer、stringbuilder-的区别) String、StringBuffer、StringBuilder 的区别？
+### String、StringBuffer、StringBuilder 的区别？
 
 **可变性**
 
@@ -1616,7 +1619,7 @@ abstract class AbstractStringBuilder implements Appendable, CharSequence {
 2. 单线程操作字符串缓冲区下操作大量数据: 适用 `StringBuilder`
 3. 多线程操作字符串缓冲区下操作大量数据: 适用 `StringBuffer`
 
-### [#](#string-为什么是不可变的) String 为什么是不可变的?
+### String 为什么是不可变的?
 
 `String` 类中使用 `final`和`private` 关键字修饰字符数组来保存字符串，并且没有提供/暴露修改这个字符串的方法。
 
@@ -1643,7 +1646,7 @@ public final class String implements java.io.Serializable, Comparable<String>, C
 >
 > 这是官方的介绍：https://openjdk.java.net/jeps/254 。
 
-### [#](#字符串拼接用-还是-stringbuilder) 字符串拼接用“+” 还是 StringBuilder?
+### 字符串拼接用“+” 还是 StringBuilder?
 
 Java 语言本身并不支持运算符重载，“+”和“+=”是专门为 String 类重载过的运算符，也是 Java 中仅有的两个重载过的运算符。
 
@@ -1698,11 +1701,11 @@ System.out.println(s);
 
 不过，使用 “+” 进行字符串拼接会产生大量的临时对象的问题在 JDK9 中得到了解决。在 JDK9 当中，字符串相加 “+” 改为了用动态方法 `makeConcatWithConstants()` 来实现，而不是大量的 `StringBuilder` 了。这个改进是 JDK9 的 [JEP 280open in new window](https://openjdk.org/jeps/280) 提出的，这也意味着 JDK 9 之后，你可以放心使用“+” 进行字符串拼接了。关于这部分改进的详细介绍，推荐阅读这篇文章：还在无脑用 [StringBuilder？来重温一下字符串拼接吧open in new window](https://juejin.cn/post/7182872058743750715) 。
 
-### [#](#string-equals-和-object-equals-有何区别) String#equals() 和 Object#equals() 有何区别？
+### String#equals() 和 Object#equals() 有何区别？
 
 `String` 中的 `equals` 方法是被重写过的，比较的是 String 字符串的值是否相等。 `Object` 的 `equals` 方法是比较的对象的内存地址。
 
-### [#](#字符串常量池的作用了解吗) 字符串常量池的作用了解吗？
+### 字符串常量池的作用了解吗？
 
 **字符串常量池** 是 JVM 为了提升性能和减少内存消耗针对字符串（String 类）专门开辟的一块区域，主要目的是为了避免字符串的重复创建。
 
@@ -1719,7 +1722,7 @@ System.out.println(aa==bb);// true
 
 更多关于字符串常量池的介绍可以看一下 [Java 内存区域详解open in new window](https://javaguide.cn/java/jvm/memory-area.html) 这篇文章。
 
-### [#](#string-s1-new-string-abc-这句话创建了几个字符串对象) String s1 = new String("abc");这句话创建了几个字符串对象？
+### String s1 = new String("abc");这句话创建了几个字符串对象？
 
 会创建 1 或 2 个字符串对象。
 
@@ -1758,7 +1761,7 @@ String s2 = new String("abc");
 
 这里就不对上面的字节码进行详细注释了，7 这个位置的 `ldc` 命令不会在堆中创建新的字符串对象“abc”，这是因为 0 这个位置已经执行了一次 `ldc` 命令，已经在堆中创建过一次字符串对象“abc”了。7 这个位置执行 `ldc` 命令会直接返回字符串常量池中字符串对象“abc”对应的引用。
 
-### [#](#string-intern-方法有什么作用) String#intern 方法有什么作用?
+### String#intern 方法有什么作用?
 
 `String.intern()` 是一个 native（本地）方法，其作用是将指定的字符串对象的引用保存在字符串常量池中，可以简单分为两种情况：
 
@@ -1787,7 +1790,7 @@ System.out.println(s3 == s4); // false
 System.out.println(s1 == s4); //true
 ```
 
-### [#](#string-类型的变量和常量做-运算时发生了什么) String 类型的变量和常量做“+”运算时发生了什么？
+### String 类型的变量和常量做“+”运算时发生了什么？
 
 先来看字符串不加 `final` 关键字拼接的情况（JDK1.8）：
 
@@ -1878,14 +1881,14 @@ public static String getStr() {
 
 ![Java 异常类层次结构图](https://oss.javaguide.cn/github/javaguide/java/basis/types-of-exceptions-in-java.png)Java 异常类层次结构图
 
-### [#](#exception-和-error-有什么区别) Exception 和 Error 有什么区别？
+### Exception 和 Error 有什么区别？
 
 在 Java 中，所有的异常都有一个共同的祖先 `java.lang` 包中的 `Throwable` 类。`Throwable` 类有两个重要的子类:
 
 - **`Exception`** :程序本身可以处理的异常，可以通过 `catch` 来进行捕获。`Exception` 又可以分为 Checked Exception (受检查异常，必须处理) 和 Unchecked Exception (不受检查异常，可以不处理)。
 - **`Error`**：`Error` 属于程序无法处理的错误 ，我们没办法通过 `catch` 来进行捕获不建议通过`catch`捕获 。例如 Java 虚拟机运行错误（`Virtual MachineError`）、虚拟机内存不够错误(`OutOfMemoryError`)、类定义错误（`NoClassDefFoundError`）等 。这些异常发生时，Java 虚拟机（JVM）一般会选择线程终止。
 
-### [#](#checked-exception-和-unchecked-exception-有什么区别) Checked Exception 和 Unchecked Exception 有什么区别？
+### Checked Exception 和 Unchecked Exception 有什么区别？
 
 **Checked Exception** 即 受检查异常 ，Java 代码在编译过程中，如果受检查异常没有被 `catch`或者`throws` 关键字处理的话，就没办法通过编译。
 
@@ -1911,14 +1914,14 @@ public static String getStr() {
 
 ![img](https://oss.javaguide.cn/github/javaguide/java/basis/unchecked-exception.png)
 
-### [#](#throwable-类常用方法有哪些) Throwable 类常用方法有哪些？
+### Throwable 类常用方法有哪些？
 
 - `String getMessage()`: 返回异常发生时的简要描述
 - `String toString()`: 返回异常发生时的详细信息
 - `String getLocalizedMessage()`: 返回异常对象的本地化信息。使用 `Throwable` 的子类覆盖这个方法，可以生成本地化信息。如果子类没有覆盖该方法，则该方法返回的信息与 `getMessage()`返回的结果相同
 - `void printStackTrace()`: 在控制台上打印 `Throwable` 对象封装的异常信息
 
-### [#](#try-catch-finally-如何使用) try-catch-finally 如何使用？
+### try-catch-finally 如何使用？
 
 - `try`块：用于捕获异常。其后可接零个或多个 `catch` 块，如果没有 `catch` 块，则必须跟一个 `finally` 块。
 - `catch`块：用于处理 try 捕获到的异常。
@@ -1987,7 +1990,7 @@ public static int f(int value) {
 0
 ```
 
-### [#](#finally-中的代码一定会执行吗) finally 中的代码一定会执行吗？
+### finally 中的代码一定会执行吗？
 
 不一定的！在某些情况下，finally 中的代码不会被执行。
 
@@ -2026,7 +2029,7 @@ Catch Exception -> RuntimeException
 
 🧗🏻 进阶一下：从字节码角度分析`try catch finally`这个语法糖背后的实现原理。
 
-### [#](#如何使用-try-with-resources-代替try-catch-finally) 如何使用 `try-with-resources` 代替`try-catch-finally`？
+### 如何使用 `try-with-resources` 代替`try-catch-finally`？
 
 1. **适用范围（资源的定义）：** 任何实现 `java.lang.AutoCloseable`或者 `java.io.Closeable` 的对象
 2. **关闭资源和 finally 块的执行顺序：** 在 `try-with-resources` 语句中，任何 catch 或 finally 块在声明的资源关闭后运行
@@ -2089,7 +2092,7 @@ catch (IOException e) {
 }
 ```
 
-### [#](#异常使用有哪些需要注意的地方) 异常使用有哪些需要注意的地方？
+### 异常使用有哪些需要注意的地方？
 
 - 不要把异常定义为静态变量，因为这样会导致异常栈信息错乱。每次手动抛出异常，我们都需要手动 new 一个异常对象抛出。
 - 抛出的异常信息一定要有意义。
@@ -2097,9 +2100,9 @@ catch (IOException e) {
 - 使用日志打印异常之后就不要再抛出异常了（两者不要同时存在一段代码逻辑中）。
 - ......
 
-[#](#泛型) 泛型
+## 泛型
 
-### [#](#什么是泛型-有什么作用) 什么是泛型？有什么作用？
+### 什么是泛型？有什么作用？
 
 **Java 泛型（Generics）** 是 JDK 5 中引入的一个新特性。使用泛型参数，可以增强代码的可读性以及稳定性。
 
@@ -2113,7 +2116,7 @@ ArrayList<E> extends AbstractList<E>
 
 并且，原生 `List` 返回类型是 `Object` ，需要手动转换类型才能使用，使用泛型后编译器自动转换。
 
-### [#](#泛型的使用方式有哪几种) 泛型的使用方式有哪几种？
+### 泛型的使用方式有哪几种？
 
 泛型一般有三种使用方式:**泛型类**、**泛型接口**、**泛型方法**。
 
@@ -2210,22 +2213,22 @@ printArray( stringArray  );
 
 > 注意: `public static < E > void printArray( E[] inputArray )` 一般被称为静态泛型方法;在 java 中泛型只是一个占位符，必须在传递类型后才能使用。类在实例化时才能真正的传递类型参数，由于静态方法的加载先于类的实例化，也就是说类中的泛型还没有传递真正的类型参数，静态的方法的加载就已经完成了，所以静态泛型方法是没有办法使用类上声明的泛型的。只能使用自己声明的 `<E>`
 
-### [#](#项目中哪里用到了泛型) 项目中哪里用到了泛型？
+### 项目中哪里用到了泛型？
 
 - 自定义接口通用返回结果 `CommonResult<T>` 通过参数 `T` 可根据具体的返回类型动态指定结果的数据类型
 - 定义 `Excel` 处理类 `ExcelUtil<T>` 用于动态指定 `Excel` 导出的数据类型
 - 构建集合工具类（参考 `Collections` 中的 `sort`, `binarySearch` 方法）。
 - ......
 
-## [#](#反射) 反射
+## 反射
 
 关于反射的详细解读，请看这篇文章 [Java 反射机制详解]() 。
 
-### [#](#何谓反射) 何谓反射？
+### 何谓反射？
 
 如果说大家研究过框架的底层原理或者咱们自己写过框架的话，一定对反射这个概念不陌生。反射之所以被称为框架的灵魂，主要是因为它赋予了我们在运行时分析类以及执行类中方法的能力。通过反射你可以获取任意一个类的所有属性和方法，你还可以调用这些方法和属性。
 
-### [#](#反射的优缺点) 反射的优缺点？
+### 反射的优缺点？
 
 反射可以让我们的代码更加灵活、为各种框架提供开箱即用的功能提供了便利。
 
@@ -2233,7 +2236,7 @@ printArray( stringArray  );
 
 相关阅读：[Java Reflection: Why is it so slow?open in new window](https://stackoverflow.com/questions/1392351/java-reflection-why-is-it-so-slow) 。
 
-### [#](#反射的应用场景) 反射的应用场景？
+### 反射的应用场景？
 
 像咱们平时大部分时候都是在写业务代码，很少会接触到直接使用反射机制的场景。但是！这并不代表反射没有用。相反，正是因为反射，你才能这么轻松地使用各种框架。像 Spring/Spring Boot、MyBatis 等等框架中都大量使用了反射机制。
 
@@ -2269,9 +2272,9 @@ public class DebugInvocationHandler implements InvocationHandler {
 
 这些都是因为你可以基于反射分析类，然后获取到类/属性/方法/方法的参数上的注解。你获取到注解之后，就可以做进一步的处理。
 
-## [#](#注解) 注解
+## 注解
 
-### [#](#何谓注解) 何谓注解？
+### 何谓注解？
 
 `Annotation` （注解） 是 Java5 开始引入的新特性，可以看作是一种特殊的注释，主要用于修饰类、方法或者变量，提供某些信息供程序在编译或者运行时使用。
 
@@ -2293,18 +2296,18 @@ public interface Override extends Annotation{
 
 JDK 提供了很多内置的注解（比如 `@Override`、`@Deprecated`），同时，我们还可以自定义注解。
 
-### [#](#注解的解析方法有哪几种) 注解的解析方法有哪几种？
+### 注解的解析方法有哪几种？
 
 注解只有被解析之后才会生效，常见的解析方法有两种：
 
 - **编译期直接扫描**：编译器在编译 Java 代码的时候扫描对应的注解并处理，比如某个方法使用`@Override` 注解，编译器在编译的时候就会检测当前的方法是否重写了父类对应的方法。
 - **运行期通过反射处理**：像框架中自带的注解(比如 Spring 框架的 `@Value`、`@Component`)都是通过反射来进行处理的。
 
-## [#](#spi) SPI
+## SPI
 
 关于 SPI 的详细解读，请看这篇文章 [Java SPI 机制详解]() 。
 
-### [#](#何谓-spi) 何谓 SPI?
+### 何谓 SPI?
 
 SPI 即 Service Provider Interface ，字面意思就是：“服务提供者的接口”，我的理解是：专门提供给服务提供者或者扩展框架功能的开发者去使用的一个接口。
 
@@ -2314,7 +2317,7 @@ SPI 将服务接口和具体的服务实现分离开来，将服务调用方和�
 
 ![img](https://oss.javaguide.cn/github/javaguide/java/basis/spi/22e1830e0b0e4115a882751f6c417857tplv-k3u1fbpfcp-zoom-1.jpeg)
 
-### [#](#spi-和-api-有什么区别) SPI 和 API 有什么区别？
+### SPI 和 API 有什么区别？
 
 **那 SPI 和 API 有啥区别？**
 
@@ -2330,18 +2333,18 @@ SPI 将服务接口和具体的服务实现分离开来，将服务调用方和�
 
 举个通俗易懂的例子：公司 H 是一家科技公司，新设计了一款芯片，然后现在需要量产了，而市面上有好几家芯片制造业公司，这个时候，只要 H 公司指定好了这芯片生产的标准（定义好了接口标准），那么这些合作的芯片公司（服务提供者）就按照标准交付自家特色的芯片（提供不同方案的实现，但是给出来的结果是一样的）。
 
-### [#](#spi-的优缺点) SPI 的优缺点？
+### SPI 的优缺点？
 
 通过 SPI 机制能够大大地提高接口设计的灵活性，但是 SPI 机制也存在一些缺点，比如：
 
 - 需要遍历加载所有的实现类，不能做到按需加载，这样效率还是相对较低的。
 - 当多个 `ServiceLoader` 同时 `load` 时，会有并发问题。
 
-## [#](#序列化和反序列化) 序列化和反序列化
+## 序列化和反序列化
 
 关于序列化和反序列化的详细解读，请看这篇文章 [Java 序列化详解]() ，里面涉及到的知识点和面试题更全面。
 
-### [#](#什么是序列化-什么是反序列化) 什么是序列化?什么是反序列化?
+### 什么是序列化?什么是反序列化?
 
 如果我们需要持久化 Java 对象比如将 Java 对象保存在文件中，或者在网络传输 Java 对象，这些场景都需要用到序列化。
 
@@ -2384,7 +2387,7 @@ https://www.corejavaguru.com/java/serialization/interview-questions-1
 
 因为，OSI 七层协议模型中的应用层、表示层和会话层对应的都是 TCP/IP 四层模型中的应用层，所以序列化协议属于 TCP/IP 协议应用层的一部分。
 
-### [#](#如果有些字段不想进行序列化怎么办) 如果有些字段不想进行序列化怎么办？
+### 如果有些字段不想进行序列化怎么办？
 
 对于不想进行序列化的变量，使用 `transient` 关键字修饰。
 
@@ -2396,13 +2399,13 @@ https://www.corejavaguru.com/java/serialization/interview-questions-1
 - `transient` 修饰的变量，在反序列化后变量值将会被置成类型的默认值。例如，如果是修饰 `int` 类型，那么反序列后结果就是 `0`。
 - `static` 变量因为不属于任何对象(Object)，所以无论有没有 `transient` 关键字修饰，均不会被序列化。
 
-### [#](#常见序列化协议有哪些) 常见序列化协议有哪些？
+### 常见序列化协议有哪些？
 
 JDK 自带的序列化方式一般不会用 ，因为序列化效率低并且存在安全问题。比较常用的序列化协议有 Hessian、Kryo、Protobuf、ProtoStuff，这些都是基于二进制的序列化协议。
 
 像 JSON 和 XML 这种属于文本类序列化方式。虽然可读性比较好，但是性能较差，一般不会选择。
 
-### [#](#为什么不推荐使用-jdk-自带的序列化) 为什么不推荐使用 JDK 自带的序列化？
+### 为什么不推荐使用 JDK 自带的序列化？
 
 我们很少或者说几乎不会直接使用 JDK 自带的序列化方式，主要原因有下面这些原因：
 
@@ -2410,7 +2413,7 @@ JDK 自带的序列化方式一般不会用 ，因为序列化效率低并且存
 - **性能差**：相比于其他序列化框架性能更低，主要原因是序列化之后的字节数组体积较大，导致传输成本加大。
 - **存在安全问题**：序列化和反序列化本身并不存在问题。但当输入的反序列化的数据可被用户控制，那么攻击者即可通过构造恶意输入，让反序列化产生非预期的对象，在此过程中执行构造的任意代码。相关阅读：[应用安全：JAVA 反序列化漏洞之殇open in new window](https://cryin.github.io/blog/secure-development-java-deserialization-vulnerability/) 。
 
-## [#](#i-o) I/O
+## I/O
 
 关于 I/O 的详细解读，请看下面这几篇文章，里面涉及到的知识点和面试题更全面。
 
@@ -2418,7 +2421,7 @@ JDK 自带的序列化方式一般不会用 ，因为序列化效率低并且存
 - [Java IO 设计模式总结]()
 - [Java IO 模型详解]()
 
-### [#](#java-io-流了解吗) Java IO 流了解吗？
+### Java IO 流了解吗？
 
 IO 即 `Input/Output`，输入和输出。数据输入到计算机内存的过程即输入，反之输出到外部存储（比如数据库，文件，远程主机）的过程即输出。数据传输过程类似于水流，因此称为 IO 流。IO 流在 Java 中分为输入流和输出流，而根据数据的处理方式又分为字节流和字符流。
 
@@ -2427,7 +2430,7 @@ Java IO 流的 40 多个类都是从如下 4 个抽象类基类中派生出来�
 - `InputStream`/`Reader`: 所有的输入流的基类，前者是字节输入流，后者是字符输入流。
 - `OutputStream`/`Writer`: 所有输出流的基类，前者是字节输出流，后者是字符输出流。
 
-### [#](#i-o-流为什么要分为字节流和字符流呢) I/O 流为什么要分为字节流和字符流呢?
+### I/O 流为什么要分为字节流和字符流呢?
 
 问题本质想问：**不管是文件读写还是网络发送接收，信息的最小存储单元都是字节，那为什么 I/O 流操作要分为字节流操作和字符流操作呢？**
 
@@ -2436,17 +2439,17 @@ Java IO 流的 40 多个类都是从如下 4 个抽象类基类中派生出来�
 - 字符流是由 Java 虚拟机将字节转换得到的，这个过程还算是比较耗时；
 - 如果我们不知道编码类型的话，使用字节流的过程中很容易出现乱码问题。
 
-### [#](#java-io-中的设计模式有哪些) Java IO 中的设计模式有哪些？
+### Java IO 中的设计模式有哪些？
 
 参考答案：[Java IO 设计模式总结]()
 
-### [#](#bio、nio-和-aio-的区别) BIO、NIO 和 AIO 的区别？
+### BIO、NIO 和 AIO 的区别？
 
 参考答案：[Java IO 模型详解]()
 
-## [#](#语法糖) 语法糖
+## 语法糖
 
-### [#](#什么是语法糖) 什么是语法糖？
+### 什么是语法糖？
 
 **语法糖（Syntactic sugar）** 代指的是编程语言为了方便程序员开发程序而设计的一种特殊语法，这种语法对编程语言的功能并没有影响。实现相同的功能，基于语法糖写出来的代码往往更简单简洁且更易阅读。
 
@@ -2463,7 +2466,7 @@ for (String s : strs) {
 
 不过，JVM 其实并不能识别语法糖，Java 语法糖要想被正确执行，需要先通过编译器进行解糖，也就是在程序编译阶段将其转换成 JVM 认识的基本语法。这也侧面说明，Java 中真正支持语法糖的是 Java 编译器而不是 JVM。如果你去看`com.sun.tools.javac.main.JavaCompiler`的源码，你会发现在`compile()`中有一个步骤就是调用`desugar()`，这个方法就是负责解语法糖的实现的。
 
-### [#](#java-中有哪些常见的语法糖) Java 中有哪些常见的语法糖？
+### Java 中有哪些常见的语法糖？
 
 Java 中最常用的语法糖主要有泛型、自动拆装箱、变长参数、枚举、内部类、增强 for 循环、try-with-resources 语法、lambda 表达式等。
 
