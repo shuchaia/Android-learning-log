@@ -2,7 +2,7 @@
 
 集合概述
 
-## [#](#java-集合概览) Java 集合概览
+## Java 集合概览
 
 Java 集合， 也叫作容器，主要是由两大接口派生而来：一个是 `Collection`接口，主要用于存放单一元素；另一个是 `Map` 接口，主要用于存放键值对。对于`Collection` 接口，下面又有三个主要的子接口：`List`、`Set` 和 `Queue`。
 
@@ -12,57 +12,57 @@ Java 集合框架如下图所示：
 
 注：图中只列举了主要的继承派生关系，并没有列举所有关系。比方省略了`AbstractList`, `NavigableSet`等抽象类以及其他的一些辅助类，如想深入了解，可自行查看源码。
 
-### [#](#说说-list-set-queue-map-四者的区别) 说说 List, Set, Queue, Map 四者的区别？
+### 说说 List, Set, Queue, Map 四者的区别？
 
 - `List`(对付顺序的好帮手): 存储的元素是有序的、可重复的。
 - `Set`(注重独一无二的性质): 存储的元素不可重复的。
 - `Queue`(实现排队功能的叫号机): 按特定的排队规则来确定先后顺序，存储的元素是有序的、可重复的。
 - `Map`(用 key 来搜索的专家): 使用键值对（key-value）存储，类似于数学上的函数 y=f(x)，"x" 代表 key，"y" 代表 value，key 是无序的、不可重复的，value 是无序的、可重复的，每个键最多映射到一个值。
 
-### [#](#集合框架底层数据结构总结) 集合框架底层数据结构总结
+### 集合框架底层数据结构总结
 
 先来看一下 `Collection` 接口下面的集合。
 
-#### [#](#list) List
+#### List
 
 - `ArrayList`：`Object[]` 数组
 - `Vector`：`Object[]` 数组
 - `LinkedList`：双向链表(JDK1.6 之前为循环链表，JDK1.7 取消了循环)
 
-#### [#](#set) Set
+#### Set
 
 - `HashSet`(无序，唯一): 基于 `HashMap` 实现的，底层采用 `HashMap` 来保存元素
 - `LinkedHashSet`: `LinkedHashSet` 是 `HashSet` 的子类，并且其内部是通过 `LinkedHashMap` 来实现的。有点类似于我们之前说的 `LinkedHashMap` 其内部是基于 `HashMap` 实现一样，不过还是有一点点区别的
 - `TreeSet`(有序，唯一): 红黑树(自平衡的排序二叉树)
 
-#### [#](#queue) Queue
+#### Queue
 
 - `PriorityQueue`: `Object[]` 数组来实现二叉堆
 - `ArrayQueue`: `Object[]` 数组 + 双指针
 
 再来看看 `Map` 接口下面的集合。
 
-#### [#](#map) Map
+#### Map
 
 - `HashMap`：JDK1.8 之前 `HashMap` 由数组+链表组成的，数组是 `HashMap` 的主体，链表则是主要为了解决哈希冲突而存在的（“拉链法”解决冲突）。JDK1.8 以后在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为 8）（将链表转换成红黑树前会判断，如果当前数组的长度小于 64，那么会选择先进行数组扩容，而不是转换为红黑树）时，将链表转化为红黑树，以减少搜索时间
 - `LinkedHashMap`：`LinkedHashMap` 继承自 `HashMap`，所以它的底层仍然是基于拉链式散列结构即由数组和链表或红黑树组成。另外，`LinkedHashMap` 在上面结构的基础上，增加了一条双向链表，使得上面的结构可以保持键值对的插入顺序。同时通过对链表进行相应的操作，实现了访问顺序相关逻辑。详细可以查看：[《LinkedHashMap 源码详细分析（JDK1.8）》open in new window](https://www.imooc.com/article/22931)
 - `Hashtable`：数组+链表组成的，数组是 `Hashtable` 的主体，链表则是主要为了解决哈希冲突而存在的
 - `TreeMap`：红黑树（自平衡的排序二叉树）
 
-### [#](#如何选用集合) 如何选用集合?
+### 如何选用集合?
 
 我们主要根据集合的特点来选择合适的集合。比如：
 
 - 我们需要根据键值获取到元素值时就选用 `Map` 接口下的集合，需要排序时选择 `TreeMap`,不需要排序时就选择 `HashMap`,需要保证线程安全就选用 `ConcurrentHashMap`。
 - 我们只需要存放元素值时，就选择实现`Collection` 接口的集合，需要保证元素唯一时选择实现 `Set` 接口的集合比如 `TreeSet` 或 `HashSet`，不需要就选择实现 `List` 接口的比如 `ArrayList` 或 `LinkedList`，然后再根据实现这些接口的集合的特点来选用。
 
-### [#](#为什么要使用集合) 为什么要使用集合？
+### 为什么要使用集合？
 
 当我们需要存储一组类型相同的数据时，数组是最常用且最基本的容器之一。但是，使用数组存储对象存在一些不足之处，因为在实际开发中，存储的数据类型多种多样且数量不确定。这时，Java 集合就派上用场了。与数组相比，Java 集合提供了更灵活、更有效的方法来存储多个数据对象。Java 集合框架中的各种集合类和接口可以存储不同类型和数量的对象，同时还具有多样化的操作方式。相较于数组，Java 集合的优势在于它们的大小可变、支持泛型、具有内建算法等。总的来说，Java 集合提高了数据的存储和处理灵活性，可以更好地适应现代软件开发中多样化的数据需求，并支持高质量的代码编写。
 
-## [#](#list-1) List
+## List
 
-### [#](#arraylist-和-array-数组-的区别) ArrayList 和 Array（数组）的区别？
+### ArrayList 和 Array（数组）的区别？
 
 `ArrayList` 内部基于动态数组实现，比 `Array`（静态数组） 使用起来更加灵活：
 
@@ -110,19 +110,19 @@ Java 集合框架如下图所示：
  System.out.println(stringList); // [world, !, goodbye]
 ```
 
-### [#](#arraylist-和-vector-的区别-了解即可) ArrayList 和 Vector 的区别?（了解即可）
+### ArrayList 和 Vector 的区别?（了解即可）
 
 - `ArrayList` 是 `List` 的主要实现类，底层使用 `Object[]`存储，适用于频繁的查找工作，线程不安全 。
 - `Vector` 是 `List` 的古老实现类，底层使用`Object[]` 存储，线程安全。
 
-### [#](#vector-和-stack-的区别-了解即可) Vector 和 Stack 的区别?（了解即可）
+### Vector 和 Stack 的区别?（了解即可）
 
 - `Vector` 和 `Stack` 两者都是线程安全的，都是使用 `synchronized` 关键字进行同步处理。
 - `Stack` 继承自 `Vector`，是一个后进先出的栈，而 `Vector` 是一个列表。
 
 随着 Java 并发编程的发展，`Vector` 和 `Stack` 已经被淘汰，推荐使用并发集合类（例如 `ConcurrentHashMap`、`CopyOnWriteArrayList` 等）或者手动实现线程安全的方法来提供安全的多线程操作支持。
 
-### [#](#arraylist-可以添加-null-值吗) ArrayList 可以添加 null 值吗？
+### ArrayList 可以添加 null 值吗？
 
 `ArrayList` 中可以存储任何类型的对象，包括 `null` 值。不过，不建议向`ArrayList` 中添加 `null` 值， `null` 值无意义，会让代码难以维护比如忘记做判空处理就会导致空指针异常。
 
@@ -145,7 +145,7 @@ System.out.println(listOfStrings);
 [null, java]
 ```
 
-### [#](#arraylist-插入和删除元素的时间复杂度) ArrayList 插入和删除元素的时间复杂度？
+### ArrayList 插入和删除元素的时间复杂度？
 
 对于插入：
 
@@ -181,7 +181,7 @@ System.out.println(listOfStrings);
   0   1   2   3   4   5   6   7   8   9
 ```
 
-### [#](#linkedlist-插入和删除元素的时间复杂度) LinkedList 插入和删除元素的时间复杂度？
+### LinkedList 插入和删除元素的时间复杂度？
 
 - 头部插入/删除：只需要修改头结点的指针即可完成插入/删除操作，因此时间复杂度为 O(1)。
 - 尾部插入/删除：只需要修改尾结点的指针即可完成插入/删除操作，因此时间复杂度为 O(1)。
@@ -189,13 +189,13 @@ System.out.println(listOfStrings);
 
 这里简单列举一个例子：假如我们要删除节点9 的话，需要先遍历链表找到该节点。然后，再执行相应节点指针指向的更改，具体的源码可以参考：[LinkedList 源码分析]() 。
 
-![unlink 方法逻辑](https://oss.javaguide.cn/github/javaguide/java/collection/linkedlist-unlink.jpg)unlink 方法逻辑
+![unlink 方法逻辑](https://oss.javaguide.cn/github/javaguide/java/collection/linkedlist-unlink.jpg)
 
-### [#](#linkedlist-为什么不能实现-randomaccess-接口) LinkedList 为什么不能实现 RandomAccess 接口？
+### LinkedList 为什么不能实现 RandomAccess 接口？
 
 `RandomAccess` 是一个标记接口，用来表明实现该接口的类支持随机访问（即可以通过索引快速访问元素）。由于 `LinkedList` 底层数据结构是链表，内存地址不连续，只能通过指针来定位，不支持随机快速访问，所以不能实现 `RandomAccess` 接口。
 
-### [#](#arraylist-与-linkedlist-区别) ArrayList 与 LinkedList 区别?
+### ArrayList 与 LinkedList 区别?
 
 - **是否保证线程安全：** `ArrayList` 和 `LinkedList` 都是不同步的，也就是不保证线程安全；
 - **底层数据结构：** `ArrayList` 底层使用的是 **`Object` 数组**；`LinkedList` 底层使用的是 **双向链表** 数据结构（JDK1.6 之前为循环链表，JDK1.7 取消了循环。注意双向链表和双向循环链表的区别，下面有介绍到！）
@@ -211,7 +211,7 @@ System.out.println(listOfStrings);
 
 另外，不要下意识地认为 `LinkedList` 作为链表就最适合元素增删的场景。我在上面也说了，`LinkedList` 仅仅在头尾插入或者删除元素的时候时间复杂度近似 O(1)，其他情况增删元素的平均时间复杂度都是 O(n) 。
 
-#### [#](#补充内容-双向链表和双向循环链表) 补充内容: 双向链表和双向循环链表
+#### 补充内容: 双向链表和双向循环链表
 
 **双向链表：** 包含两个指针，一个 prev 指向前一个节点，一个 next 指向后一个节点。
 
@@ -221,7 +221,7 @@ System.out.println(listOfStrings);
 
 ![双向循环链表](https://oss.javaguide.cn/github/javaguide/cs-basics/data-structure/bidirectional-circular-linkedlist.png)双向循环链表
 
-#### [#](#补充内容-randomaccess-接口) 补充内容:RandomAccess 接口
+#### 补充内容:RandomAccess 接口
 
 
 
@@ -248,13 +248,13 @@ public interface RandomAccess {
 
 `ArrayList` 实现了 `RandomAccess` 接口， 而 `LinkedList` 没有实现。为什么呢？我觉得还是和底层数据结构有关！`ArrayList` 底层是数组，而 `LinkedList` 底层是链表。数组天然支持随机访问，时间复杂度为 O(1)，所以称为快速随机访问。链表需要遍历到特定位置才能访问特定位置的元素，时间复杂度为 O(n)，所以不支持快速随机访问。`ArrayList` 实现了 `RandomAccess` 接口，就表明了他具有快速随机访问功能。 `RandomAccess` 接口只是标识，并不是说 `ArrayList` 实现 `RandomAccess` 接口才具有快速随机访问功能的！
 
-### [#](#说一说-arraylist-的扩容机制吧) 说一说 ArrayList 的扩容机制吧
+### 说一说 ArrayList 的扩容机制吧
 
 详见笔主的这篇文章: [ArrayList 扩容机制分析open in new window](https://javaguide.cn/java/collection/arraylist-source-code.html#_3-1-先从-arraylist-的构造函数说起)。
 
-## [#](#set-1) Set
+## Set
 
-### [#](#comparable-和-comparator-的区别) Comparable 和 Comparator 的区别
+### Comparable 和 Comparator 的区别
 
 `Comparable` 接口和 `Comparator` 接口都是 Java 中用于排序的接口，它们在实现类对象之间比较大小、排序等方面发挥了重要作用：
 
@@ -263,7 +263,7 @@ public interface RandomAccess {
 
 一般我们需要对一个集合使用自定义排序时，我们就要重写`compareTo()`方法或`compare()`方法，当我们需要对某一个集合实现两种排序方式，比如一个 `song` 对象中的歌名和歌手名分别采用一种排序方法的话，我们可以重写`compareTo()`方法和使用自制的`Comparator`方法或者以两个 `Comparator` 来实现歌名排序和歌星名排序，第二种代表我们只能使用两个参数版的 `Collections.sort()`.
 
-#### [#](#comparator-定制排序) Comparator 定制排序
+#### Comparator 定制排序
 
 
 
@@ -314,7 +314,7 @@ Collections.sort(arrayList):
 [7, 4, 3, 3, -1, -5, -7, -9]
 ```
 
-#### [#](#重写-compareto-方法实现按年龄来排序) 重写 compareTo 方法实现按年龄来排序
+#### 重写 compareTo 方法实现按年龄来排序
 
 
 
@@ -393,20 +393,20 @@ Output：
 30-张三
 ```
 
-### [#](#无序性和不可重复性的含义是什么) 无序性和不可重复性的含义是什么
+### 无序性和不可重复性的含义是什么
 
 - 无序性不等于随机性 ，无序性是指存储的数据在底层数组中并非按照数组索引的顺序添加 ，而是根据数据的哈希值决定的。
 - 不可重复性是指添加的元素按照 `equals()` 判断时 ，返回 false，需要同时重写 `equals()` 方法和 `hashCode()` 方法。
 
-### [#](#比较-hashset、linkedhashset-和-treeset-三者的异同) 比较 HashSet、LinkedHashSet 和 TreeSet 三者的异同
+### 比较 HashSet、LinkedHashSet 和 TreeSet 三者的异同
 
 - `HashSet`、`LinkedHashSet` 和 `TreeSet` 都是 `Set` 接口的实现类，都能保证元素唯一，并且都不是线程安全的。
 - `HashSet`、`LinkedHashSet` 和 `TreeSet` 的主要区别在于底层数据结构不同。`HashSet` 的底层数据结构是哈希表（基于 `HashMap` 实现）。`LinkedHashSet` 的底层数据结构是链表和哈希表，元素的插入和取出顺序满足 FIFO。`TreeSet` 底层数据结构是红黑树，元素是有序的，排序的方式有自然排序和定制排序。
 - 底层数据结构不同又导致这三者的应用场景不同。`HashSet` 用于不需要保证元素插入和取出顺序的场景，`LinkedHashSet` 用于保证元素的插入和取出顺序满足 FIFO 的场景，`TreeSet` 用于支持对元素自定义排序规则的场景。
 
-## [#](#queue-1) Queue
+## Queue
 
-### [#](#queue-与-deque-的区别) Queue 与 Deque 的区别
+### Queue 与 Deque 的区别
 
 `Queue` 是单端队列，只能从一端插入元素，另一端删除元素，实现上一般遵循 **先进先出（FIFO）** 规则。
 
@@ -433,7 +433,7 @@ Output：
 
 事实上，`Deque` 还提供有 `push()` 和 `pop()` 等其他方法，可用于模拟栈。
 
-### [#](#arraydeque-与-linkedlist-的区别) ArrayDeque 与 LinkedList 的区别
+### ArrayDeque 与 LinkedList 的区别
 
 `ArrayDeque` 和 `LinkedList` 都实现了 `Deque` 接口，两者都具有队列的功能，但两者有什么区别呢？
 
@@ -444,7 +444,7 @@ Output：
 
 从性能的角度上，选用 `ArrayDeque` 来实现队列要比 `LinkedList` 更好。此外，`ArrayDeque` 也可以用于实现栈。
 
-### [#](#说一说-priorityqueue) 说一说 PriorityQueue
+### 说一说 PriorityQueue
 
 `PriorityQueue` 是在 JDK1.5 中被引入的, 其与 `Queue` 的区别在于元素出队顺序是与优先级相关的，即总是优先级最高的元素先出队。
 
@@ -457,7 +457,7 @@ Output：
 
 `PriorityQueue` 在面试中可能更多的会出现在手撕算法的时候，典型例题包括堆排序、求第 K 大的数、带权图的遍历等，所以需要会熟练使用才行。
 
-### [#](#什么是-blockingqueue) 什么是 BlockingQueue？
+### 什么是 BlockingQueue？
 
 `BlockingQueue` （阻塞队列）是一个接口，继承自 `Queue`。`BlockingQueue`阻塞的原因是其支持当队列没有元素时一直阻塞，直到有元素；还支持如果队列已满，一直等到队列可以放入新元素时再放入。
 
@@ -473,7 +473,7 @@ public interface BlockingQueue<E> extends Queue<E> {
 
 ![BlockingQueue](https://oss.javaguide.cn/github/javaguide/java/collection/blocking-queue.png)BlockingQueue
 
-### [#](#blockingqueue-的实现类有哪些) BlockingQueue 的实现类有哪些？
+### BlockingQueue 的实现类有哪些？
 
 ![BlockingQueue 的实现类](https://oss.javaguide.cn/github/javaguide/java/collection/blocking-queue-hierarchy.png)BlockingQueue 的实现类
 
@@ -488,7 +488,7 @@ Java 中常用的阻塞队列实现类有以下几种：
 
 日常开发中，这些队列使用的其实都不多，了解即可。
 
-### [#](#arrayblockingqueue-和-linkedblockingqueue-有什么区别) ArrayBlockingQueue 和 LinkedBlockingQueue 有什么区别？
+### ArrayBlockingQueue 和 LinkedBlockingQueue 有什么区别？
 
 `ArrayBlockingQueue` 和 `LinkedBlockingQueue` 是 Java 并发包中常用的两种阻塞队列实现，它们都是线程安全的。不过，不过它们之间也存在下面这些区别：
 
