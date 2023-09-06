@@ -12,6 +12,8 @@
 
 [Java集合](https://github.com/shuchaia/Android-learning-log/blob/main/Java集合.md)
 
+[Java并发](https://github.com/shuchaia/Android-learning-log/blob/main/Java并发.md)
+
 [安卓八股](https://github.com/shuchaia/Android-learning-log/blob/main/安卓八股.md)
 
 [JVM相关八股](https://github.com/shuchaia/Android-learning-log/blob/main/JVM相关八股.md)
