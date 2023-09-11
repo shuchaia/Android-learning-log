@@ -14,8 +14,13 @@
 
 [Java并发](https://github.com/shuchaia/Android-learning-log/blob/main/Java并发.md)
 
-[安卓八股](https://github.com/shuchaia/Android-learning-log/blob/main/安卓八股.md)
+[Java设计模式](https://github.com/shuchaia/Android-learning-log/blob/main/Java设计模式.md)
 
 [JVM相关八股](https://github.com/shuchaia/Android-learning-log/blob/main/JVM相关八股.md)
+
+[安卓八股](https://github.com/shuchaia/Android-learning-log/blob/main/安卓八股.md)
+
+[算法笔记](https://github.com/shuchaia/Android-learning-log/blob/main/算法笔记.md)
+
 
 持续更新ing
